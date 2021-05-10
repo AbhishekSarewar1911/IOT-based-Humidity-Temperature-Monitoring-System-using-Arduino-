@@ -38,7 +38,10 @@ The only difference between the sensor and module is that the module will have a
 The DHT11 is a commonly used Temperature and humidity sensor. The sensor comes with a dedicated NTC to measure temperature and an 8-bit microcontroller to output the values of temperature and humidity as serial data. The sensor is also factory calibrated and hence easy to interface with other microcontrollers.
 
 The sensor can measure temperature from 0°C to 50°C and humidity from 20% to 90% with an accuracy of ±1°C and ±1%. So if you are looking to measure in this range then this sensor might be the right choice for you.
- ![Alt Text]()
+
+  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11-Sensor.jpg) 
+  
+  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11%E2%80%93Temperature-Sensor-Pinout.jpg)
 
  
 ## How to use DHT11 Sensor:
@@ -50,61 +53,78 @@ As you can see the data pin is connected to an I/O pin of the MCU and a 5K pull-
  
  
  
- # IoT Water Flow Meter using ESP8266 & Water Flow Sensor
+ # Circuit and connections using ESP8266 & DHT11 Sensor
  
- Water Flow Sensor is a digital Sensor, so we can connect its output pin to any of the digital pins of ESP8266. In my case, I connected to GPIO2, i.e D4. The sensor works at 5V & can be connected to Vin of ESP8266. Similarly, I2C OLED Display SDA & SCL pins are connected to D2 & D1 of ESP8266 respectively. The OLED Display works at 3.3V so it can be connected to 3.3V pin of Nodemcu.
- ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/Water-Flow-Sensor-ESP8266-Node%20Mcu%20Circuit%20Diagram.jpg)
- I have assembled the circuit on Breadboard. You can use the PCB for making the small Water Flow Meter board and you can also use ARDUINO UNO set up for connecting  YF-S201 Hall-Effect Water Flow Sensor with LED display.
-
- let us see the IoT Water Flow Meter Circuit Diagram & Connection with Arduino Uno .
+ Circuit diagram for monitoring humidity and temperature is shown in Figure below It is built around Arduino MCU, DHT11 sensor and ESP8266 Wi-Fi module.
  
- ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/Circuit-Diagram%20with%20ARDUINO%20UNO.jpg)
+ ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Circuit-Diagram-Arduino-and-ESP8266.jpg)
  
- # Mathematical Calculation to Measure Flow Rate & Volume
+ The DHT11 sensor senses humidity and temperature, and sends the information to digital pin 5 of Arduino MCU, as shown in Fig. 2. From Arduino MCU, humidity and temperature values are uploaded to the Cloud at regular intervals of time through ESP8266 Wi-Fi module. From the Cloud, humidity and temperature values can be seen graphically on ThingSpeak platform from anywhere in the world.
+ 
+  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Arduino-Setup2.jpg)
+  
 
-> Sensor Frequency (Hz) = 7.5 * Q (Liters/min)
-
-> Litres = Q * time elapsed (seconds) / 60 (seconds/minute)
-
-> Litres = (Frequency (Pulses/second) / 7.5) * time elapsed (seconds) / 60
-
-> Litres = Pulses / (7.5 * 60)
-
- # Setting up Thingspeak
+ 
+ #  CONSTRUCTION Work and Testing
+ ThingSpeak is an open source data platform but you need to register to use it. After registering, login to your account and create a new channel with humidity as one field and temperature as another, as shown in Figure Once a new channel is created, it will generate two API keys, namely, write API key and read API key. Replace the line given below in the program with your write API key:
+ 
+  ## Setting up Thingspeak for Deployment
 
 Now we need to setup the Thingspeak Account. To set up Thingspeak follow the following Steps:
- ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/thingspeak.png)
+ ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/thingspeak.png)
  
  - Step 1: Visit https://thingspeak.com/ and create your account by filling up the details.
- - ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/waterflow_channel.png)
+ - ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11channel.png)
  - Step 2: Create a New Channel by Clicking on “Channel” & fill up the following details as shown in the image below.
- - ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/waterflowAPI.png)
+ - ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11api.png)
  - Step 3: Click on API Key, you will see the “Write API Key“. Copy the API Key. This is very important, it will be required in Code Part.
  - Step 4: You can click on the “Private View” & customize the display window as you want.
 
  So, that’s all from the Thingspeak Setup Part. Now let us move to the programming Part.
+ 
+ # Programming Arduino for Sending data to ThingSpeak
+ 
+To program Arduino, open Arduino IDE and choose the correct board and port from the ‘tool’ menu.
 
+Complete code link is mentioned at the end of this ReadMe file Upload it in Arduino UNO. If you successfully upload your program, Serial monitor will look like this:
+
+ ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Programming(serial%20monitoring)-Arduino-for-Uploading-data-to-ThingSpeak.png)
+
+String apiKey = “ I4T8HSIGTOLPHUPE “;
+
+Next, substitute Host_Name and Password with your Wi-Fi name and Wi-Fi password in the two lines given below in the program (IoT.ino):
+
+String Host_Name = “Abhishek”;
+String Password = “DHT-11”;
+
+The program should be verified with your Wi-Fi setup. It uses DHT library. If DHT library is not present in your Arduino folder, download it from https://github.com/adafruit/DHT-sensor-library. To import DHT library in Arduino IDE, select Sketch→Import library→Add library→Select the library that you have downloaded.
+
+Compile the sketch/program and upload it to Arduino MCU through Arduino IDE. Ensure that Wi-Fi modem and the Internet connection in your PC/smartphone are working properly.
+ 
+
+ 
  # Source Code/Program
  
-Now Let us see ESP8266 Water Flow Sensor Code using Arduino IDE. The code can be directly uploaded to the NodeMCU Board. But before that we need few Libraries for OLED Display. So download the Library first and add it to the Arduino IDE.
+Now Let us see ESP8266 wifi and DHT-11 sensor Code using Arduino IDE. The code can be directly uploaded to the ESP8266 WIFI Board. But before that we need few Libraries for DHT-11 Sensor. So download the Library first and add it to the Arduino IDE.
 
  
 
-> Download SSD1306 Library
+> Download <DHT.h> Library
 
-> Download Adafruit GFX Library 
+> Download Adafruit DHT Library 
+
 
  
 > 1.String apiKey = “I4T8HSIGTOLPHUPE”;
 
-> const char *ssid = “Water_Monitor”; 
+> const char *ssid = “Abhishek”; 
 
-> const char *pass = “YF-2019”;
+> const char *pass = “DHT-11”;
  
 
 Change the Thingspeak API Key, Wifi SSID & Password from the line above.
 
-Now go through the source code given: https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/Water%20Flow%20reading%20code.c
+Now go through the source code given:https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Source%20code.c
 
 
 # Monitoring Water Flow Rate & Volume In ThingSpeak
@@ -118,6 +138,6 @@ Once the motor is turned ON & Water Starts flowing, you can see the OLED Display
 
 ## OUTPUT GRAPH
 
-![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/Water-Flow-Sensor-Thingspeak2.jpg)
+![Alt Text]()
 
 ### thankyou!
