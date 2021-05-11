@@ -71,7 +71,7 @@ As you can see the data pin is connected to an I/O pin of the MCU and a 5K pull-
   ## Setting up Thingspeak for Deployment
 
 Now we need to setup the Thingspeak Account. To set up Thingspeak follow the following Steps:
- ![Alt Text]()
+ ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/thingspeak.png)
  
  - Step 1: Visit https://thingspeak.com/ and create your account by filling up the details.
  - ![Alt Text]()
