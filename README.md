@@ -76,7 +76,7 @@ Now we need to setup the Thingspeak Account. To set up Thingspeak follow the fol
  - Step 1: Visit https://thingspeak.com/ and create your account by filling up the details.
  - ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11channel.png)
  - Step 2: Create a New Channel by Clicking on “Channel” & fill up the following details as shown in the image below.
- - ![Alt Text]()
+ - ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11api.png)
  - Step 3: Click on API Key, you will see the “Write API Key“. Copy the API Key. This is very important, it will be required in Code Part.
  - Step 4: You can click on the “Private View” & customize the display window as you want.
 
