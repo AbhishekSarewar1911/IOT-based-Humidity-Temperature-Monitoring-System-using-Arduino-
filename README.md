@@ -60,14 +60,15 @@ As you can see the data pin is connected to an I/O pin of the MCU and a 5K pull-
  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Circuit-Diagram-Arduino-and-ESP8266.jpg)
  
  The DHT11 sensor senses humidity and temperature, and sends the information to digital pin 5 of Arduino MCU, as shown in Fig. 2. From Arduino MCU, humidity and temperature values are uploaded to the Cloud at regular intervals of time through ESP8266 Wi-Fi module. From the Cloud, humidity and temperature values can be seen graphically on ThingSpeak platform from anywhere in the world.
-  ![Alt Text]()
+ 
+  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Arduino-Setup2.jpg)
+  
 
  
- # Mathematical Calculation to Measure Flow Rate & Volume
-
-
-
- # Setting up Thingspeak
+ #  CONSTRUCTION Work and Testing
+ ThingSpeak is an open source data platform but you need to register to use it. After registering, login to your account and create a new channel with humidity as one field and temperature as another, as shown in Figure Once a new channel is created, it will generate two API keys, namely, write API key and read API key. Replace the line given below in the program with your write API key:
+ 
+  ## Setting up Thingspeak for Deployment
 
 Now we need to setup the Thingspeak Account. To set up Thingspeak follow the following Steps:
  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/thingspeak.png)
@@ -80,7 +81,27 @@ Now we need to setup the Thingspeak Account. To set up Thingspeak follow the fol
  - Step 4: You can click on the “Private View” & customize the display window as you want.
 
  So, that’s all from the Thingspeak Setup Part. Now let us move to the programming Part.
+ 
+ # Programming Arduino for Sending data to ThingSpeak
+To program Arduino, open Arduino IDE and choose the correct board and port from the ‘tool’ menu.
 
+Complete code link is mentioned at the end of this ReadMe file Upload it in Arduino UNO. If you successfully upload your program, Serial monitor will look like this:
+
+ ![Alt Text]()
+
+String apiKey = “ NTIM1RXET6YVUVWF “;
+
+Next, substitute Host_Name and Password with your Wi-Fi name and Wi-Fi password in the two lines given below in the program (IoT.ino):
+
+String Host_Name = “Jonah”;
+String Password = “2569696”;
+
+The program should be verified with your Wi-Fi setup. It uses DHT library. If DHT library is not present in your Arduino folder, download it from https://github.com/adafruit/DHT-sensor-library. To import DHT library in Arduino IDE, select Sketch→Import library→Add library→Select the library that you have downloaded.
+
+Compile the sketch/program and upload it to Arduino MCU through Arduino IDE. Ensure that Wi-Fi modem and the Internet connection in your PC/smartphone are working properly.
+ 
+
+ 
  # Source Code/Program
  
 Now Let us see ESP8266 Water Flow Sensor Code using Arduino IDE. The code can be directly uploaded to the NodeMCU Board. But before that we need few Libraries for OLED Display. So download the Library first and add it to the Arduino IDE.
