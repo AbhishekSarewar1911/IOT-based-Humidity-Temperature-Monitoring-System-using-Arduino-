@@ -4,11 +4,11 @@
 
 - 1 Overview:  IOT-based-Humidity & Temperature-Monitoring-System  using ESP8266 & DHT11 Sensor
 - 2 DHT-11 Humidity and Temperature Sensor
-- 3 IoT system using ESP8266 wifi Module & DHT-11 temperature Sensor
-- 4 Mathematical Calculation to Measure Flow Rate & Volume
+- 3 Circuit and connections using ESP8266 & DHT11 Sensor
+- 4 CONSTRUCTION Work and Testing
 - 5 Setting up Thingspeak
 - 6 Source Code/Program
-- 7 Monitoring Water Flow Rate & Volume and output graph
+- 7 OUTPUT graph
 
 ## Overview: IOT-based-Humidity & Temperature-Monitoring-System  using ESP8266 & DHT11 Sensor
  
@@ -127,14 +127,7 @@ Change the Thingspeak API Key, Wifi SSID & Password from the line above.
 Now go through the source code given:https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Source%20code.c
 
 
-# Monitoring Water Flow Rate & Volume In ThingSpeak
- 
 
-Once the Code is uploaded the OLED Display will start working and will show the flow rate and volume. Initially the flow rate will be 0 liter/minute(L/M). Also Total Volume shown will be 0 Liter(L).
-![Alt Text](https://github.com/AbhishekSarewar1911/IOT-basedWater-Monitoring-System-using-waterflow-yf-s201-sensor-and-8266-nodeMCU-microcontroller-/blob/main/Iot-Water-Flow-Meter-SETUP.jpg)
- 
-
-Once the motor is turned ON & Water Starts flowing, you can see the OLED Display displaying the Flow Rate (F) & Volume(V).
 
 ## OUTPUT GRAPH
 
