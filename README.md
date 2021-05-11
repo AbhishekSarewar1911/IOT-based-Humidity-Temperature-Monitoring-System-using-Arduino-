@@ -9,7 +9,7 @@
 - 5 Setting up Thingspeak
 - 6 Source Code/Program
 - 7 Monitoring Water Flow Rate & Volume and output graph
-- 
+
 ## Overview: IOT-based-Humidity & Temperature-Monitoring-System  using ESP8266 & DHT11 Sensor
  
 
@@ -44,7 +44,7 @@ The sensor can measure temperature from 0°C to 50°C and humidity from 20% to 9
 ## How to use DHT11 Sensor:
 The DHT11 Sensor is factory calibrated and outputs serial data and hence it is highly easy to set it up. The connection diagram for this sensor is shown below.
 
-![Alt Text]()
+![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Circuit-using-DHT11%E2%80%93Temperature-Sensor.png)
  
 As you can see the data pin is connected to an I/O pin of the MCU and a 5K pull-up resistor is used. This data pin outputs the value of both temperature and humidity as serial data. If you are trying to interface DHT11 with Arduino then there are ready-made libraries for it which will give you a quick start.
  
