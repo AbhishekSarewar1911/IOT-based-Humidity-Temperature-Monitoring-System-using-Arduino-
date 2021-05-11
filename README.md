@@ -38,7 +38,7 @@ The only difference between the sensor and module is that the module will have a
 The DHT11 is a commonly used Temperature and humidity sensor. The sensor comes with a dedicated NTC to measure temperature and an 8-bit microcontroller to output the values of temperature and humidity as serial data. The sensor is also factory calibrated and hence easy to interface with other microcontrollers.
 
 The sensor can measure temperature from 0°C to 50°C and humidity from 20% to 90% with an accuracy of ±1°C and ±1%. So if you are looking to measure in this range then this sensor might be the right choice for you.
- ![Alt Text]()
+  ![Alt Text]()  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11%E2%80%93Temperature-Sensor-Pinout.jpg)
 
  
 ## How to use DHT11 Sensor:
