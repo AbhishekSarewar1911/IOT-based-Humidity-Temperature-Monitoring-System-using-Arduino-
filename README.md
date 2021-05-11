@@ -138,6 +138,6 @@ Once the motor is turned ON & Water Starts flowing, you can see the OLED Display
 
 ## OUTPUT GRAPH
 
-![Alt Text]()
+![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/ThingSpeak-%20Output%20graph.png)
 
 ### thankyou!
