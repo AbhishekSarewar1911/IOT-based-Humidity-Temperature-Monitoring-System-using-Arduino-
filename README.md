@@ -38,7 +38,10 @@ The only difference between the sensor and module is that the module will have a
 The DHT11 is a commonly used Temperature and humidity sensor. The sensor comes with a dedicated NTC to measure temperature and an 8-bit microcontroller to output the values of temperature and humidity as serial data. The sensor is also factory calibrated and hence easy to interface with other microcontrollers.
 
 The sensor can measure temperature from 0°C to 50°C and humidity from 20% to 90% with an accuracy of ±1°C and ±1%. So if you are looking to measure in this range then this sensor might be the right choice for you.
-  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11-Sensor.jpg)  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11%E2%80%93Temperature-Sensor-Pinout.jpg)
+
+  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11-Sensor.jpg) 
+  
+  ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/DHT11%E2%80%93Temperature-Sensor-Pinout.jpg)
 
  
 ## How to use DHT11 Sensor:
@@ -54,7 +57,7 @@ As you can see the data pin is connected to an I/O pin of the MCU and a 5K pull-
  
  Circuit diagram for monitoring humidity and temperature is shown in Figure below It is built around Arduino MCU, DHT11 sensor and ESP8266 Wi-Fi module.
  
- ![Alt Text]()
+ ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Circuit-Diagram-Arduino-and-ESP8266.jpg)
  
  The DHT11 sensor senses humidity and temperature, and sends the information to digital pin 5 of Arduino MCU, as shown in Fig. 2. From Arduino MCU, humidity and temperature values are uploaded to the Cloud at regular intervals of time through ESP8266 Wi-Fi module. From the Cloud, humidity and temperature values can be seen graphically on ThingSpeak platform from anywhere in the world.
   ![Alt Text]()
