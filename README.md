@@ -87,14 +87,14 @@ To program Arduino, open Arduino IDE and choose the correct board and port from 
 
 Complete code link is mentioned at the end of this ReadMe file Upload it in Arduino UNO. If you successfully upload your program, Serial monitor will look like this:
 
- ![Alt Text]()
+ ![Alt Text](https://github.com/AbhishekSarewar1911/IOT-based-Humidity-Temperature-Monitoring-System-using-Arduino-/blob/main/Programming(serial%20monitoring)-Arduino-for-Uploading-data-to-ThingSpeak.png)
 
-String apiKey = “ NTIM1RXET6YVUVWF “;
+String apiKey = “ I4T8HSIGTOLPHUPE “;
 
 Next, substitute Host_Name and Password with your Wi-Fi name and Wi-Fi password in the two lines given below in the program (IoT.ino):
 
-String Host_Name = “Jonah”;
-String Password = “2569696”;
+String Host_Name = “Abhishek”;
+String Password = “DHT-11”;
 
 The program should be verified with your Wi-Fi setup. It uses DHT library. If DHT library is not present in your Arduino folder, download it from https://github.com/adafruit/DHT-sensor-library. To import DHT library in Arduino IDE, select Sketch→Import library→Add library→Select the library that you have downloaded.
 
@@ -104,20 +104,20 @@ Compile the sketch/program and upload it to Arduino MCU through Arduino IDE. Ens
  
  # Source Code/Program
  
-Now Let us see ESP8266 Water Flow Sensor Code using Arduino IDE. The code can be directly uploaded to the NodeMCU Board. But before that we need few Libraries for OLED Display. So download the Library first and add it to the Arduino IDE.
+Now Let us see ESP8266 wifi and DHT-11 sensor Code using Arduino IDE. The code can be directly uploaded to the ESP8266 WIFI Board. But before that we need few Libraries for DHT-11 Sensor. So download the Library first and add it to the Arduino IDE.
 
  
 
-> Download SSD1306 Library
+> Download <DHT.h> Library
 
-> Download Adafruit GFX Library 
+> Download Adafruit DHT Library 
 
  
 > 1.String apiKey = “I4T8HSIGTOLPHUPE”;
 
-> const char *ssid = “Water_Monitor”; 
+> const char *ssid = “Abhishek”; 
 
-> const char *pass = “YF-2019”;
+> const char *pass = “DHT-11”;
  
 
 Change the Thingspeak API Key, Wifi SSID & Password from the line above.
